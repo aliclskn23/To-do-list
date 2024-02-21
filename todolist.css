@@ -13,7 +13,7 @@ body{
 }
  
 
-  .title{
+  .title ,.task-counter{
     font-size: 30px;
     font-family: "Poppins",sans-serif;
     font-weight: 600;
