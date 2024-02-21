@@ -4,6 +4,7 @@ const toDoContainer = document.getElementById('toDoContainer');
 const InputText = document.getElementById('InputText');
 const taskCountElement = document.getElementById('taskCount');
 
+
 let taskCount = 0;
 
 addToDo.addEventListener("click", () => {
@@ -33,3 +34,14 @@ function updateTaskCount(change) {
     taskCount += change;
     taskCountElement.textContent = taskCount;
 }
+
+let isNightMode = false;
+
+toggleMode.addEventListener("click", () => {
+    isNightMode = !isNightMode;
+    document.body.style.backgroundColor  = isNightMode ? '#333' : '#fff';
+    document.body.style.color = isNightMode ? '#fff' : '#333';
+})
+
+  
+ 
