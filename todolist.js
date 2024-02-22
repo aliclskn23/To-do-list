@@ -1,47 +1,52 @@
-const addToDo = document.getElementById('addToDo');
-const clearToDo = document.getElementById('clearToDo');
-const toDoContainer = document.getElementById('toDoContainer');
+let tasks = [];
+// Input ve listeyi seç
+const newTaskInput = document.getElementById('newTask');
+const taskList = document.getElementById('taskList');
 const InputText = document.getElementById('InputText');
-const taskCountElement = document.getElementById('taskCount');
 
 
-let taskCount = 0;
+// Görev ekleme fonksiyonu
+function addTask() {
+  const taskText = newTaskInput.value;
+  
+  // Görev objesini oluştur
+  const task = {
+    id: Date.now(),
+    text: taskText,
+    completed: false
+  };
 
-addToDo.addEventListener("click", () => {
-    const paragraph = document.createElement('p');
-    paragraph.innerHTML = InputText.value;
-    toDoContainer.appendChild(paragraph);
-    InputText.value = '';
+  // Görevi diziye ekle
+  tasks.push(task);
 
-    paragraph.addEventListener("click", () => {
-        paragraph.style.textDecoration = 'line-through';
-    });
+  renderTasks();
 
-    // Görev eklendiğinde sayacı güncelle
-    updateTaskCount(1);
-});
+  newTaskInput.value='';
 
-clearToDo.addEventListener("click", () => {
-    // Tüm paragrafları temizlemek için
-    toDoContainer.innerHTML = '';
+}
+function renderTasks(){
+    
+    taskList.innerHTML = '';
 
-    // Tüm görevleri sildiğimizde sayacı sıfırla
-    updateTaskCount(0);
-});
-
-function updateTaskCount(change) {
-    // Görev sayacını güncelle
-    taskCount += change;
-    taskCountElement.textContent = taskCount;
+tasks.forEach(task => {
+    const listItem = document.createElement('li');
+    listItem.classList='compList';
+    listItem.style.listStyleType='none';
+    listItem.innerHTML=`
+    <input type="checkbox" ${task.completed ? 'checked' : ''} onclick="toggleTask(${task.id})">
+    ${task.text}
+    <button class="deleteBtn"  onclick="deleteTask(${task.id})">Sil</button> 
+    `;
+    taskList.appendChild(listItem);
+})    
 }
 
-let isNightMode = false;
+function deleteTask(taskId){
+    tasks = tasks.filter(task => task.id !== taskId);
+    renderTasks();
+}
 
-toggleMode.addEventListener("click", () => {
-    isNightMode = !isNightMode;
-    document.body.style.backgroundColor  = isNightMode ? '#333' : '#fff';
-    document.body.style.color = isNightMode ? '#fff' : '#333';
-})
 
-  
- 
+
+
+

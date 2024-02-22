@@ -1,52 +1,52 @@
 body{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background-color: #ccc;
-    transition: background-color 0.5s ease;
-
+  background-color: darkgrey;
 }
-.container{
-  width: 100%;
-  text-align: center;
-    margin-top: 100px;
-}
+.todo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px;
+ }
+ .title{
+     font-family: "Roboto",sans-serif;
+     font-size: 30px;
+     font-weight: 600;
  
-
-  .title ,.task-counter{
-    font-size: 30px;
-    font-family: "Poppins",sans-serif;
-    font-weight: 600;
-  }
-  .InputTextCont{
-    width: 400px;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-  }
-  .addBtn,.clearBtn{
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    width: 150px;
-    color: white;
-    background-color: rgb(73, 18, 101);
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-  }
-  .inp-container{
-    gap: 20px;
-    padding: 20px;
-   
-  }
-  .to-dos{
-    font-size: 20px;
-    font-family: "Roboto",sans-serif;
-    cursor: pointer;
-  }
-  .fa-moon{
-    cursor: pointer;
-  }
-
-  
-  
+ }
+ .textContent{
+     width: 500px;
+     border-radius: 40px;
+     padding: 10px;
+     border: solid 2px purple;
+ }
+ .addBtn{
+     font-family: "Poppins",sans-serif;
+     font-size: 20px;
+     padding: 10px;
+     background-color: purple;
+     color: white;
+     border-radius: 20px;
+     border: none;
+     cursor: pointer;
+     width: 150px;
+     margin-top: 20px;
+ }
+ .deleteBtn{
+     font-family: "Poppins",sans-serif;
+     font-size: 20px;
+     padding: 5px;
+     background-color: purple;
+     color: white;
+     border-radius: 15px;
+     border: none;
+     cursor: pointer;
+     width: 70px;
+ }
+ .compList{
+     font-size: 20px;
+     font-family: "Poppins",sans-serif;
+     padding: 10px;
+     font-weight: 600;
+ 
+ }
