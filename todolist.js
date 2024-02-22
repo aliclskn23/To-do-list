@@ -1,22 +1,18 @@
 let tasks = [];
-// Input ve listeyi seç
 const newTaskInput = document.getElementById('newTask');
 const taskList = document.getElementById('taskList');
 const InputText = document.getElementById('InputText');
 
 
-// Görev ekleme fonksiyonu
 function addTask() {
   const taskText = newTaskInput.value;
   
-  // Görev objesini oluştur
   const task = {
     id: Date.now(),
     text: taskText,
     completed: false
   };
 
-  // Görevi diziye ekle
   tasks.push(task);
 
   renderTasks();
