@@ -16,6 +16,7 @@ function addTask(){
         text: taskText,
         completed: false
     };
+    
     //oluşturulan görev objelerini push ile tasks boş dizi olana atanır.
     tasks.push(task);
 
