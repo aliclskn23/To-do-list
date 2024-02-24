@@ -3,28 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Task List</title>
     <link rel="stylesheet" href="todolist.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">ToDo List</h1>
+    <div class="todo-container" id="app">
+      <h1 class="title">TODO LIST</h1>
+      <button class="mod" id="darkModeBtn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+      </button>
+      <!-- Artı butonunu içeren div -->
+      <div class="add-task-button" onclick="openTaskPage()">+</div>
 
-      <div>
-        <input type="text" class="InputTextCont" id="InputText" />
-        <i class="far fa-moon" id="toggleMode"></i>
-      </div>
-      <div class="inp-container">
-        <input type="submit" class="addBtn" id="addToDo" value="Ekle" />
-        <input type="submit" class="clearBtn" id="clearToDo" value="Sil" />
+      <ul id="taskList"></ul>
+
+      <!-- Görev eklemek için kullanılacak overlay -->
+      <div id="overlay">
+        <div class="task-input-container">
+          <div class="new-note">New Note</div>
+          <input
+            class="inputBtn"
+            type="text"
+            id="taskInput"
+            placeholder="Yeni görev ekleyin..."
+          />
+          <div class="btns">
+            <button class="confirmTaskButton" onclick="addTask()">Ekle</button>
+            <button class="confirmTaskButton" onclick="closeTaskPage()">
+              Geri
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div class="to-dos" id="toDoContainer"></div>
+      <script src="todolist.js"></script>
     </div>
-    <script src="todolist.js"></script>
   </body>
 </html>
