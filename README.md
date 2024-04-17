@@ -4,7 +4,7 @@
 - JavaScript
 - Html
 - Css
-- React
+
 
 ## Sayaç 
 - function updateTaskCount(change) {
